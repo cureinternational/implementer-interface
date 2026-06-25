@@ -23,7 +23,7 @@ class FormPrinterContainer extends Component {
   }
 
   onFileUpload(event) {
-    let file = this.state.selectedFile;
+    const file = this.state.selectedFile;
     this.setState({ importBtnStatus: 'clicked' });
     const self = this;
     const reader = new FileReader();
@@ -32,8 +32,8 @@ class FormPrinterContainer extends Component {
       try {
         const formData = JSON.parse(reader.result);
         httpInterceptor.post(formBuilderConstants.jsonToPdfConvertionUrl, formData).then((response) => {
-          let fileName = response.pdfName;
-          let link = formBuilderConstants.pdfDownloadUrl + fileName;
+          const fileName = response.pdfName;
+          const link = formBuilderConstants.pdfDownloadUrl + fileName;
           self.setState({ downloadLink: link });
           self.setState({ status: 'Completed' });
         });
