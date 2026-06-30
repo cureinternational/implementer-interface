@@ -11,7 +11,7 @@
   "scripts": {
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
     "clean": "rimraf dist/*",
-    "upgrade-form-control": "yarn upgrade bahmni-form-controls-cure@0.93.21",
+    "upgrade-form-control": "yarn upgrade bahmni-form-controls-cure",
     "copy": "copyfiles -f ./index.html ./dist",
     "build": "yarn run copy && webpack",
     "build-dev": "yarn run copy && webpack --config webpack.dev.config.js",
