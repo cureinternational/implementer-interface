@@ -32,6 +32,10 @@ module.exports = {
         target: 'https://192.168.33.10',
         secure: false,
       },
+      '/bahmni-new': {
+        target: 'https://192.168.33.10',
+        secure: false,
+      },
     },
   },
   plugins: [
