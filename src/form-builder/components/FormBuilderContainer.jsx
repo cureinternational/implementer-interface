@@ -19,7 +19,7 @@ export class FormBuilderContainer extends Component {
 
   constructor() {
     super();
-    this.state = { data: [], notification: {}, loading: true };
+    this.state = { data: [], notification: {}, loading: true, allowedDomains: [] };
     this.setState = this.setState.bind(this);
   }
 
@@ -27,6 +27,19 @@ export class FormBuilderContainer extends Component {
     this.getFormData().then(() => {
       this.getDefaultLocale();
     });
+    this.getAllowedDomains();
+  }
+
+  getAllowedDomains() {
+    httpInterceptor
+      .get(formBuilderConstants.allowedDomainsGPUrl, 'text')
+      .then((data) => {
+        const allowedDomains = (data || '').split(',').map((d) => d.trim()).filter(Boolean);
+        this.setState({ allowedDomains });
+      })
+      .catch(() => {
+        this.setState({ allowedDomains: [] });
+      });
   }
 
   onValidationError(message) {
@@ -132,9 +145,7 @@ export class FormBuilderContainer extends Component {
         });
         self.saveTranslations(updatedTranslations, formNameTranslationsResource);
       })
-      .catch(() => {
-        this.setMessage('Error Importing Form', commonConstants.responseType.error);
-      });
+      .catch((error) => this.showErrors(error));
   }
 
   render() {
@@ -145,6 +156,7 @@ export class FormBuilderContainer extends Component {
           notification={this.state.notification}
         />
         <FormBuilder
+          allowedDomains={this.state.allowedDomains}
           data={this.state.data}
           dispatch={this.props.dispatch}
           match={this.props.match}
