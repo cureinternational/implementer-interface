@@ -22,6 +22,8 @@ const formDetails = (store = {}, action) => {
       });
     case 'SET_DEFAULT_LOCALE':
       return Object.assign({}, store, { defaultLocale: action.locale });
+    case 'SET_ALLOWED_DOMAINS':
+      return Object.assign({}, store, { allowedDomains: action.domains });
     default:
       return store;
   }
