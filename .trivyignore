@@ -35,6 +35,10 @@ CVE-2022-37601
 CVE-2022-37599
 CVE-2022-37603
 
+# brace-expansion (transitive from minimatch / dev toolchain only — karma, webpack, eslint;
+# CVE-2026-14257 fixed only in 5.0.8 which is semver-incompatible with minimatch's ^1.1.7)
+CVE-2026-14257
+
 # minimatch (transitive from karma, mocha, eslint)
 CVE-2022-3517
 CVE-2026-26996
