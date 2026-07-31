@@ -17,8 +17,12 @@ CVE-2026-12143
 CVE-2022-29167
 CVE-2020-36604
 
-# immutable (transitive from webpack)
+# immutable (transitive from bahmni-form-controls-cure; vulnerable code is bundled
+# inside the dist/bundle.js of that package — a yarn resolution cannot fix the
+# embedded copy; real fix requires a new bahmni-form-controls-cure release)
 CVE-2026-29063
+CVE-2026-59879
+CVE-2026-59880
 
 # ini (transitive from node/npm build tooling)
 CVE-2020-7788
