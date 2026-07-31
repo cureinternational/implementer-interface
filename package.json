@@ -110,6 +110,7 @@
     "**/**/xmlhttprequest-ssl": "^1.6.1",
     "**/**/open": "^6.0.0",
     "**/**/growl": "^1.10.0",
-    "**/**/handlebars": "^4.7.7"
+    "**/**/handlebars": "^4.7.7",
+    "**/**/brace-expansion": "1.1.16"
   }
 }
