@@ -29,6 +29,6 @@ export const formBuilderConstants = {
   jsonToPdfConvertionUrl: '/openmrs/ws/rest/v1/bahmniie/form/jsonToPdf',
   pdfDownloadUrl: '/openmrs/ws/rest/v1/bahmniie/form/download/',
   hyperlinkUrlProperty: 'hyperlinkUrl',
-  hyperlinkLabelProperty: 'hyperlinkLabel',
+  allowedDomainsGPUrl: '/openmrs/ws/rest/v1/bahmnicore/sql/globalproperty?property=bahmni.forms.hyperlink.allowedDomains',
 
 };
